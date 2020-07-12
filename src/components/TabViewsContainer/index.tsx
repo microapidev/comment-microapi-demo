@@ -43,7 +43,9 @@ const TabViewsContainer: FunctionComponent<TabViewsContainerProps> = ({
         <Tabs
           value={value}
           onChange={handleChange}
-          aria-label="The tabs for the different comment functionalities."
+          aria-label={`The tabs for the different ${tabLabels[0]
+            .split(" ")[0]
+            .toLowerCase()} functionalities.`}
         >
           {tabLabels.map((tabLabel, index) => {
             return (
