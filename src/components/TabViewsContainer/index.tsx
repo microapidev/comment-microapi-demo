@@ -10,10 +10,12 @@ type TabViewsContainerProps = {
   tabViews: ReactElement[];
 };
 
-function a11yProps(index: number) {
+function a11yProps(tabLabel: string, index: number) {
+  const formattedTabLabel = tabLabel.toLowerCase().replace(/\s/, "-");
+
   return {
-    id: `comment-tab-${index}`,
-    "aria-controls": `comment-tabpanel-${index}`,
+    id: `${formattedTabLabel}-tab-${index}`,
+    "aria-controls": `${formattedTabLabel}-tabpanel-${index}`,
   };
 }
 
@@ -44,13 +46,19 @@ const TabViewsContainer: FunctionComponent<TabViewsContainerProps> = ({
           aria-label="The tabs for the different comment functionalities."
         >
           {tabLabels.map((tabLabel, index) => {
-            return <Tab label={tabLabel} {...a11yProps(index)} />;
+            return (
+              <Tab
+                key={tabLabel}
+                label={tabLabel}
+                {...a11yProps(tabLabel, index)}
+              />
+            );
           })}
         </Tabs>
       </AppBar>
       {tabViews.map((tabView, index) => {
         return (
-          <TabPanel value={value} index={index}>
+          <TabPanel key={tabLabels[index]} value={value} index={index}>
             {tabView}
           </TabPanel>
         );
