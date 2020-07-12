@@ -3,38 +3,13 @@ import { makeStyles } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
 import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
-import Typography from "@material-ui/core/Typography";
-import Box from "@material-ui/core/Box";
-
-type TabPanelProps = {
-  children: string;
-  index: number;
-  value: number;
-  other?: any;
-};
-
-const TabPanel: FunctionComponent<TabPanelProps> = ({
-  children,
-  index,
-  value,
-  other,
-}) => {
-  return (
-    <div
-      role="tabpanel"
-      hidden={value !== index}
-      id={`simple-tabpanel-${index}`}
-      aria-labelledby={`simple-tab-${index}`}
-      {...other}
-    >
-      {value === index && (
-        <Box p={3}>
-          <Typography>{children}</Typography>
-        </Box>
-      )}
-    </div>
-  );
-};
+import TabPanel from "./TabPanel";
+import CreateComment from "./CreateComment";
+import GetComment from "./GetComment";
+import UpdateComment from "./UpdateComment";
+import DeleteComment from "./DeleteComment";
+import VoteComment from "./VoteComment";
+import FlagComment from "./FlagComment";
 
 function a11yProps(index: number) {
   return {
@@ -75,22 +50,22 @@ const Comments: FunctionComponent = () => {
         </Tabs>
       </AppBar>
       <TabPanel value={value} index={0}>
-        Comment Create Tab Panel
+        <CreateComment></CreateComment>
       </TabPanel>
       <TabPanel value={value} index={1}>
-        Comment Get Tab Panel
+        <GetComment></GetComment>
       </TabPanel>
       <TabPanel value={value} index={2}>
-        Comment Update Tab Panel
+        <UpdateComment></UpdateComment>
       </TabPanel>
       <TabPanel value={value} index={3}>
-        Comment Delete Tab Panel
+        <DeleteComment></DeleteComment>
       </TabPanel>
       <TabPanel value={value} index={4}>
-        Comment Vote Tab Panel
+        <VoteComment></VoteComment>
       </TabPanel>
       <TabPanel value={value} index={5}>
-        Comment Flag Tab Panel
+        <FlagComment></FlagComment>
       </TabPanel>
     </div>
   );
