@@ -8,9 +8,7 @@ const getAllReplySubtitle = "Need to get some replies?";
 
 const filters = [
   "By flag state",
-  "By reference ID",
   "By owner ID",
-  "By origin",
 ];
 
 const useStyles = makeStyles(() => ({
