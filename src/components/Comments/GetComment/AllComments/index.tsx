@@ -7,13 +7,13 @@ const getAllCommentHeading = "GET all comments";
 const getAllCommentSubtitle = "Need to get some comments?";
 
 const filters = [
-  "Filter by flag state",
-  "Filter by reference ID",
-  "Filter by owner ID",
-  "Filter by origin",
+  "By flag state",
+  "By reference ID",
+  "By owner ID",
+  "By origin",
 ];
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
   root: {
     display: "grid",
   },
