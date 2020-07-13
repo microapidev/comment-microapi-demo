@@ -8,14 +8,14 @@ import Comments from "../Comments/index";
 import Replies from "../Replies/index";
 import theme from "../../theme";
 
-export enum Page {
-  Home,
-  Comments,
-  Replies,
+export enum Routes {
+  Home = "/",
+  Comments = "/comments",
+  Replies = "/replies",
 }
 
 function App() {
-  const [currentPage, setCurrentPage] = useState(Page.Home);
+  const [currentPage, setCurrentPage] = useState(Routes.Home);
 
   return (
     <ThemeProvider theme={theme}>
@@ -25,13 +25,13 @@ function App() {
           currentPageState={[currentPage, setCurrentPage]}
         ></CustomAppBar>
         <Switch>
-          <Route exact path="/">
+          <Route exact path={Routes.Home}>
             <Home />
           </Route>
-          <Route path="/comments">
+          <Route path={Routes.Comments}>
             <Comments />
           </Route>
-          <Route path="/replies">
+          <Route path={Routes.Replies}>
             <Replies />
           </Route>
         </Switch>

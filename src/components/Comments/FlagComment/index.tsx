@@ -33,7 +33,7 @@ const FlagComment: FunctionComponent = () => {
       ></TabViewIntroSection>
       <Box mt={6} mb={1}>
         <Typography variant="body2" align="center" color="textSecondary">
-          Which comment would you like to flag?
+          Select a comment you'd like to flag.
         </Typography>
       </Box>
       <Grid container spacing={2}>
@@ -52,7 +52,7 @@ const FlagComment: FunctionComponent = () => {
       </Grid>
       <Box display="flex" flexDirection="column" alignItems="center" mt={4}>
         <Button variant="contained" color="secondary">
-          Comment
+          Flag Comment
         </Button>
       </Box>
     </React.Fragment>
