@@ -11,10 +11,12 @@ import { Routes } from "../index";
 
 type CustomAppBarProps = {
   currentPageState: [any, React.Dispatch<React.SetStateAction<any>>];
+  children?: React.ReactNode;
 };
 
 const CustomAppBar: FunctionComponent<CustomAppBarProps> = ({
   currentPageState,
+  children,
 }) => {
   let location = useLocation();
 
@@ -23,7 +25,7 @@ const CustomAppBar: FunctionComponent<CustomAppBarProps> = ({
   });
 
   return (
-    <AppBar position="static">
+    <AppBar position="relative" elevation={2}>
       <Toolbar>
         <Box
           display="flex"
@@ -71,6 +73,7 @@ const CustomAppBar: FunctionComponent<CustomAppBarProps> = ({
           </Box>
         </Box>
       </Toolbar>
+      {children}
     </AppBar>
   );
 };

@@ -4,8 +4,9 @@ import { ThemeProvider } from "@material-ui/core/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Home from "../Home/index";
 import CustomAppBar from "./CustomAppBar";
-import Comments from "../Comments/index";
-import Replies from "../Replies/index";
+import CustomTabBar from "./CustomTabBar";
+import Comments, { tabLabels as commentsTabLabels } from "../Comments/index";
+import Replies, { tabLabels as repliesTabLabels } from "../Replies/index";
 import theme from "../../theme";
 
 export enum Routes {
@@ -16,23 +17,42 @@ export enum Routes {
 
 function App() {
   const [currentPage, setCurrentPage] = useState(Routes.Home);
+  const [commentsTabsValue, setCommentsTabsValue] = React.useState(0);
+  const [repliesTabsValue, setRepliesTabsValue] = React.useState(0);
 
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <Router>
-        <CustomAppBar
-          currentPageState={[currentPage, setCurrentPage]}
-        ></CustomAppBar>
+        <CustomAppBar currentPageState={[currentPage, setCurrentPage]}>
+          {currentPage === Routes.Comments || currentPage === Routes.Replies ? (
+            <CustomTabBar
+              tabLabels={
+                currentPage === Routes.Comments
+                  ? commentsTabLabels
+                  : repliesTabLabels
+              }
+              tabValueState={
+                currentPage === Routes.Comments
+                  ? [commentsTabsValue, setCommentsTabsValue]
+                  : [repliesTabsValue, setRepliesTabsValue]
+              }
+            ></CustomTabBar>
+          ) : (
+            <React.Fragment></React.Fragment>
+          )}
+        </CustomAppBar>
         <Switch>
           <Route exact path={Routes.Home}>
             <Home />
           </Route>
           <Route path={Routes.Comments}>
-            <Comments />
+            <Comments
+              tabValueState={[commentsTabsValue, setCommentsTabsValue]}
+            />
           </Route>
           <Route path={Routes.Replies}>
-            <Replies />
+            <Replies tabValueState={[repliesTabsValue, setRepliesTabsValue]} />
           </Route>
         </Switch>
       </Router>
