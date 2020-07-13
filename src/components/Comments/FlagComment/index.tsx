@@ -46,7 +46,7 @@ const FlagComment: FunctionComponent = () => {
           );
         })}
       </Box>
-      <Box display="flex" flexDirection="column" alignItems="center" mt={2}>
+      <Box display="flex" flexDirection="column" alignItems="center" mt={4}>
         <Button variant="contained" color="secondary">
           Comment
         </Button>
