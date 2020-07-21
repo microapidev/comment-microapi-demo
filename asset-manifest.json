@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/comment-microapi-demo/static/css/main.447c0cf4.chunk.css",
+    "main.js": "/comment-microapi-demo/static/js/main.583cdc60.chunk.js",
+    "main.js.map": "/comment-microapi-demo/static/js/main.583cdc60.chunk.js.map",
+    "runtime-main.js": "/comment-microapi-demo/static/js/runtime-main.4aac96d4.js",
+    "runtime-main.js.map": "/comment-microapi-demo/static/js/runtime-main.4aac96d4.js.map",
+    "static/js/2.ef0f06a1.chunk.js": "/comment-microapi-demo/static/js/2.ef0f06a1.chunk.js",
+    "static/js/2.ef0f06a1.chunk.js.map": "/comment-microapi-demo/static/js/2.ef0f06a1.chunk.js.map",
+    "index.html": "/comment-microapi-demo/index.html",
+    "precache-manifest.179c3f20646a9714ad63480cfad7b2e2.js": "/comment-microapi-demo/precache-manifest.179c3f20646a9714ad63480cfad7b2e2.js",
+    "service-worker.js": "/comment-microapi-demo/service-worker.js",
+    "static/css/main.447c0cf4.chunk.css.map": "/comment-microapi-demo/static/css/main.447c0cf4.chunk.css.map",
+    "static/js/2.ef0f06a1.chunk.js.LICENSE.txt": "/comment-microapi-demo/static/js/2.ef0f06a1.chunk.js.LICENSE.txt",
+    "static/media/index.scss": "/comment-microapi-demo/static/media/Rosario-Regular.943b7457.woff"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.4aac96d4.js",
+    "static/js/2.ef0f06a1.chunk.js",
+    "static/css/main.447c0cf4.chunk.css",
+    "static/js/main.583cdc60.chunk.js"
+  ]
+}
